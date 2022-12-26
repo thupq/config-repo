@@ -13,7 +13,7 @@ spring:
   datasource:
     platform: postgres
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/project_demo_user
+    url: jdbc:postgresql://localhost:5432/postgres
     # the following values must be added in the vault as following:
     # vault kv put secret/service-books spring.datasource.username=service_books
     # vault kv put secret/service-books spring.datasource.password=srv-bks
