@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 9969
   servlet:
     context-path: /prices
 
@@ -11,17 +11,14 @@ management:
 
 spring:
   datasource:
-#    platform: postgres
-#    driver-class-name: org.postgresql.Driver
-    url: jdbc:mysql://localhost:3306/bookstore?useSSL=false
-    # the following values must be added in the vault as following:
-    # vault kv put secret/service-prices spring.datasource.username=service_prices
-    # vault kv put secret/service-prices spring.datasource.password=srv-prcs
-    username: root
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
     password: 123456
     initialization-mode: always
     jpa:
-      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
       show-sql: false
       hibernate:
         ddl-auto: create
